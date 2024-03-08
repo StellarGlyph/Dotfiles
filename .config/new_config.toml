@@ -1,0 +1,51 @@
+theme = "kanagawa"
+
+[editor]
+mouse = true
+idle-timeout = 0
+# auto-format = true
+# auto-save = true
+line-number = "absolute"
+cursorline = true
+color-modes = true
+bufferline = "multiple"
+preview-completion-insert = false
+lsp.display-inlay-hints = true
+true-color = true
+auto-format = false
+
+completion-replace = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["version-control","file-name","total-line-numbers","position-percentage"]
+right = ["file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.indent-guides]
+render = true
+
+
+[keys.normal]
+C-s = ":w"
+C-f = ":format"
+[keys.normal."+"]
+m = ":run-shell-command make"
+c = ":run-shell-command cargo build"
+t = ":run-shell-command cargo check"
+r = ":run-shell-command cargo run"
+1 = ":sh tree -L 1"
+2 = ":sh tree -L 2"
+3 = ":sh tree -L 3"
+4 = ":sh tree -L 4"
