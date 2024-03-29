@@ -1,10 +1,7 @@
-theme = "kanagawa"
-
+theme = "base16_default_dark"
 [editor]
 mouse = true
 idle-timeout = 0
-# auto-format = true
-# auto-save = true
 line-number = "absolute"
 cursorline = true
 color-modes = true
@@ -25,8 +22,8 @@ select = "underline"
 hidden = false
 
 [editor.statusline]
-left = ["mode", "spinner"]
-center = ["version-control","file-name","total-line-numbers","position-percentage"]
+left = ["mode", "spinner","file-name","total-line-numbers","position-percentage"]
+center = ["version-control"]
 right = ["file-encoding", "file-line-ending", "file-type"]
 separator = "│"
 mode.normal = "NORMAL"
@@ -36,16 +33,19 @@ mode.select = "SELECT"
 [editor.indent-guides]
 render = true
 
+[keys.insert]
+C-i = "normal_mode" 
+
+[keys.normal.z]
+j = "scroll_up"
+k = "scroll_down"
 
 [keys.normal]
-C-s = ":w"
 C-f = ":format"
+C-s = ":w" # Maps Ctrl-s to the typable command :w which is an alias for :write (save file)
+
 [keys.normal."+"]
 m = ":run-shell-command make"
 c = ":run-shell-command cargo build"
 t = ":run-shell-command cargo check"
 r = ":run-shell-command cargo run"
-1 = ":sh tree -L 1"
-2 = ":sh tree -L 2"
-3 = ":sh tree -L 3"
-4 = ":sh tree -L 4"
